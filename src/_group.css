@@ -1,0 +1,91 @@
+@keyframes pkx-signal {
+  0%, 100% { transform: scaleY(0.35); opacity: 0.5; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes pkx-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.82); }
+}
+
+@keyframes pkx-flow {
+  0% { transform: translateX(-120%); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateX(120%); opacity: 0; }
+}
+
+.pkx-bar {
+  transform-origin: bottom;
+  animation: pkx-signal 1.4s ease-in-out infinite;
+}
+
+.pkx-dot-live {
+  animation: pkx-pulse 1.8s ease-in-out infinite;
+}
+
+.pkx-flow-pip {
+  animation: pkx-flow 2.6s linear infinite;
+}
+
+/* ----- Orbital Trust variant (uniquely prefixed: pkxo-) ----- */
+@keyframes pkxo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pkxo-spin-rev {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes pkxo-dash {
+  to { stroke-dashoffset: -1000; }
+}
+
+@keyframes pkxo-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.30), 0 18px 50px -14px rgba(16, 185, 129, 0.35); }
+  50% { box-shadow: 0 0 0 16px rgba(16, 185, 129, 0), 0 22px 60px -10px rgba(16, 185, 129, 0.50); }
+}
+
+@keyframes pkxo-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-9px); }
+}
+
+@keyframes pkxo-blip {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 1; }
+}
+
+.pkxo-spin { animation: pkxo-spin 70s linear infinite; transform-origin: center; transform-box: fill-box; }
+.pkxo-spin-rev { animation: pkxo-spin-rev 52s linear infinite; transform-origin: center; transform-box: fill-box; }
+.pkxo-dash { animation: pkxo-dash 32s linear infinite; }
+.pkxo-glow { animation: pkxo-glow 4s ease-in-out infinite; }
+.pkxo-float-1 { animation: pkxo-float 6s ease-in-out infinite; }
+.pkxo-float-2 { animation: pkxo-float 6s ease-in-out infinite 1.6s; }
+.pkxo-float-3 { animation: pkxo-float 6s ease-in-out infinite 3.2s; }
+.pkxo-blip { animation: pkxo-blip 2.4s ease-in-out infinite; }
+
+/* ----- Corridor Report page (uniquely prefixed: pkxr-) ----- */
+@keyframes pkxr-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.55); }
+  50% { opacity: 0.55; box-shadow: 0 0 0 6px rgba(56, 189, 248, 0); }
+}
+@keyframes pkxr-rise {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+@keyframes pkxr-dash {
+  to { stroke-dashoffset: -1000; }
+}
+@keyframes pkxr-sweep {
+  0% { transform: translateX(-120%); opacity: 0; }
+  18% { opacity: 1; }
+  82% { opacity: 1; }
+  100% { transform: translateX(120%); opacity: 0; }
+}
+.pkxr-dot { animation: pkxr-pulse 2s ease-in-out infinite; }
+.pkxr-bar { transform-origin: bottom; animation: pkxr-rise 1.1s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.pkxr-dash { animation: pkxr-dash 28s linear infinite; }
+.pkxr-sweep { animation: pkxr-sweep 3s linear infinite; }
